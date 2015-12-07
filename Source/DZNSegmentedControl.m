@@ -553,6 +553,7 @@
     
     void (^completion)(BOOL finished) = ^void(BOOL finished){
         self.userInteractionEnabled = YES;
+		[self selectedButton].selected = true;
         _transitioning = NO;
     };
     
@@ -571,6 +572,7 @@
     }
     else {
         animations();
+		[self selectedButton].selected = true;
         completion(NO);
     }
 }
